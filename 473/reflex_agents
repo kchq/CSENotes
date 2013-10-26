@@ -1,0 +1,19 @@
+Properties of Environments
+
+Observability: Full vs partial: input all aspects of environment, or a subset?
+Deterministic vs stochastic: Is next move entirely based on current state, is there a probability of an unexpected action
+Episodic vs Sequential: Is next move indenpendent of last move
+Discrete vs continuous: When are evaluations of state being made?
+
+Simple reflex agents:
+
+
+Environment --> Sensors
+		  |
+		  V
+		Percept
+		  |
+		  V
+               Next action ----> Condition action rules
+
+Environment   <--Effectors 	

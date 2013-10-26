@@ -1,0 +1,17 @@
+State-Space Search Problems
+general problem: find a path from a start state to a goal state:
+	-goal test: tests if a given state is a goal state
+	-successor function: given a state, evaluate successors states (next possible moves)
+
+Variants: route planning, path independent search, etc
+
+State Space: All possible states of our agent
+Successor Function: function evaluated at a move to generate possible succesor states
+
+Search Trees:
+       root contains start state
+       children = successor states
+       edges = actions and step costs to lead to those new actions
+       path from root to node is a "plan" to get to that state
+    
+
