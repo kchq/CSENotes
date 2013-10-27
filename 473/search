@@ -15,3 +15,55 @@ Search Trees:
        path from root to node is a "plan" to get to that state
     
 
+State space graph search vs search trees:
+      search graphs can be cyclic  
+      tress are required to maintain more nodes
+
+Search Pseudo Code:
+       -expand all possible nodes
+       -maintain fringe of unexpanded nodes
+       
+
+function tree search
+	 fringe->insert (initial state)
+	 while fringe not empty
+	       node = fringe->remove
+	       if node is goal
+	       	  return node
+	       fringe->insert (node->generateSuccessors)
+	 return false
+
+To avoid repeated states, you must maintain a set of explored nodes, and verify
+that you are not adding explored nodes to the fringe
+
+COMPLETENESS: does it always find a solution
+TIME COMPLEXITY: number of nodes generated/expanded
+SPACE COMPLEXITY: maximum number of nodes in memory at any given time
+OPTIMALITY: does it find least cost solution
+
+b: maximum branching factor
+d: depth of the least cost solution
+m: maximum depth if the state space
+
+
+Breadth First Search:
+	FIFO queue, new succesors go to the end
+	Complete: yes (if b in finite)
+		  garuenteed to find a solution because it evaluates all nodes
+	Time: O(b^d)
+		  must eval every node, total of b^d nodes
+	Space: O(b^d)
+		  at worst case must store b^d nodes on the bottom layer
+	Optimal: Only optimal if all costs are equal
+		  will always find optimal because it goes one step at a time
+		  if there are edge weights, no garuntees
+
+
+Uniform Cost search:
+	Same as BFS, but insead uses a priority queue
+	Complete: yes
+	Time: O(b^d)
+	Space: O(b^d)
+	Optimal: Yes, expands in increasing order, garunteed to find the cheapest solution first!
+
+

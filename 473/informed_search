@@ -1,0 +1,69 @@
+Depth First Search
+      LIFO stack, put successors on top
+      expand deepest node first
+
+Step 1:
+				A*
+
+		B	 			C
+
+	D		E		F		G				
+  H          I	   J        K       L        M       N     O	
+
+
+Step 2:
+				A*
+
+		B*	 			C
+
+	D*		E		F		G				
+  H          I	   J        K       L        M       N     O	
+
+
+Step 3:
+				A*
+
+		B*	 			C
+
+	D*		E		F		G				
+  H*         I*	   J        K       L        M       N     O	
+
+
+complete: Fails in infinite depth spaces, or spaces with loops (without modified set)
+time: O(b^m) branching factor raised to the depth
+space: O(b*m) linear space!
+optimal: Nope, finds the first
+
+
+Iterative Deepening Search
+start with i = 1, go until i = some given value, exploring each level
+
+complete:Yes
+time: O(b^d)
+Space: O(b * d)
+Optimal: yes (if all costs are equal)
+
+Best First Search
+-generalized versino of breadth first search
+-priority queue of nodes to be explored
+-evaluation function f(n) used for each node
+
+	    Hueristic:
+		f(n) = h(n) = estimate of cost from n to goal
+
+Greedy BFS:
+Complete: No, can get stuck in loops (without an explored set)
+Time: O(b^m)
+Space:O(b^m) (nodes in priority queue + explored set)
+Optimal: Nope
+
+ (A*)
+A star Search
+f(n) = g(n) + h(n)
+g(n) = sum of edge costs from start to n
+h(n) - estimate of lowest cost from n to goal
+
+if h(n) is admissable then tree-search will be optimal
+ADMISSIBILITY:
+-always an underestimate cost to get to end state
+

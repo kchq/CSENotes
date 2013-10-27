@@ -1,0 +1,15 @@
+Prop Logic
+	syntax
+		complex sentences constructed from simpler ones recursively 
+		using logical operators
+
+     	semantics
+		a model specifies true/false fro each proposition symbol
+
+
+Inference techniques for logical reasoning
+	 depth first enumeration for all models:
+	       sound: yes
+	       complete: yes
+	       time: O(2^n)
+	       space: O(n)

@@ -1,0 +1,26 @@
+KB: knowledge base, set of sentences represented in a knowledge representation language
+    -stores assertions about the world
+
+Inference: When you ask the KB a question, answer should follow what has been tell'ed to the kb previously
+
+What is a logic?
+     syntax: what expressions are legal
+     semantics: what legal expression evalute to
+
+Entailment:
+	KB
+	sentance a
+
+	KB entails a if and only if a is true in all worlds (models)where KB is true
+
+	EXAMPLE: m is a model of a sentence "a" if "a" is true in "m"
+
+	M(a) is set of all models of a
+
+	KB entials a iff M(KB) is a subset of M(a)
+
+Soundness:
+	if an inference algorithm only derives entailed sentence, it is called sound
+
+Completeness: 
+	      an algorithm is complete if it can derive any sentence that is entailed
