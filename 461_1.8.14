@@ -1,0 +1,55 @@
+Link layer: 
+     >physical vs wireless (encoding of bits, bandwidth)
+     >MAC layer
+
+
+FRAME:      Dest      |   From   |   Data
+ 	   2C:46:8a     62:5a:2b      ----
+
+
+	     ff:ff:ff:ff broadcast addressm always tells OS that tells anyone that will listen
+	     -wait for responses that contian the from field to determine who is on the server
+
+Network layer
+	IP Layer
+	   -Nodes on networks can be routers/workstations/etc
+	   -At the IP layer, addresses for sending and recieving are IP addresses.
+	   -IPv4 is an IP address.
+	   -Must use IP addresses rather than just broadcasting everyhting that is sent out
+	   -A prefix for the IP address is used such that every router that is set up knows
+	   that it only have to keep trck of the direction of the IP networks with a given IPs'
+	   
+	   When putting data on the wire you need:
+	   	-youself (source IP  address)
+		-destination (dest IP address)
+		-data
+
+
+		||  DST-MAC |  SRC-MAC |  DST-IP |  SRC-IP |  DATA ||
+
+		
+		
+	-Create IP header, send to the Link layer (where the entire data includes the IP header
+	Link layer then attaches its MAC address (dest and source). 
+	Send this stuff to the gateway, which then strips off the MAC headers
+	Gateway discovers that it is IP, so it looks up in the router information 
+	(forwarding table) how to send.
+	Takes data you sent it, attaches new MAC addresses (source is now the routers, dst is 
+	where it is going next.
+
+	-Must avoid loops in your forwarding table. To avoid this, there is a TTL field in the 
+	network layer
+	
+		|| DEST IP | SOURCE IP | TTL | DATA ||
+
+
+Transport Layer (UDP, TCP)
+	  address --> IP:PORT
+
+	  UDP Packet	  ||  DST Port | SRC Port | Data ||
+
+	  IP Packet 	  ||  DST IP | SRC IP | UDP ^^ ||
+	  
+	  Frame		  ||  MAC DST | MAC SRC | IP Packet ^^ ||
+
+	  FINAL::  || MAC DST | MAC SRC | DST IP | SRC IP | DST PORT | SRC PORT | DATA ||

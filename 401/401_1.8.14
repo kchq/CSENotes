@@ -1,0 +1,34 @@
+compile time:
+	Lexer/Tokenizer		:irregular expressions, includes?, operating sys interaction, etc
+	parser			:grammar
+	analyzer		:has to look at large parts of the program to make sense of typing,etc
+
+	redundancy eliminator	
+	resource allocator	
+	code generator		
+
+runtime:
+	generation of the actual code
+
+
+-Compiler can make choices, it can either try to compute things statically, or dynamicaly do it at runtime
+-If compiler cant figure out how to evaluate and execute the program, the compiler must generate code such that at runtime, it can be executed.
+-Runtime system, runtime libraries, as well as compiler generated code
+	 -if compiler cant evaluate some library function, it waits until runtime library rutine.
+
+Runtime concerns:
+	-Debugger: may want to run a debugger, compiler has to think about bug information, debuggin symbols, etc
+	-Profiler: profiling of program, how many times is x called, how long does y take to execute.
+	-Security Audit: compiler needs to make sure that code base passes some set of constraints
+	-Memory Model
+	-Race detection
+	
+Static vs Dynamic languages
+       -provide rules early on in the compiling pipeline. The more you know at compile time, the more you can get out of your redundacy elim.
+       -strongly statically typed languages allow compile time to remove a lot of the redundancy (optimization)
+
+"90% of the execution time is taken up by 10% of the source code"
+
+JIT: Just in time compiler, interprets code and say "if this is the first time executing, then just interpret the code, if we see it 10 times, then maybe we instead decide to compile it." This allows the code to compile fast after "X" number of executions. Defer as long as possible, and make evaluations as late as possible. Optimize for the 10% of the code.
+
+

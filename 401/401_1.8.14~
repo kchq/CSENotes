@@ -1,0 +1,20 @@
+compile time:
+	Lexer/Tokenizer		:irregular expressions, includes?, operating sys interaction, etc
+	parser			:grammar
+	analyzer		:has to look at large parts of the program to make sense of typing,etc
+
+	redundancy eliminator	
+	resource allocator	
+	code generator		
+
+runtime:
+	generation of the actual code
+
+
+-Compiler can make choices, it can either try to compute things statically, or dynamicaly do it at runtime
+-If compiler cant figure out how to evaluate and execute the program, the compiler must generate code such that at runtime, it can be executed.
+-Runtime system, runtime libraries, as well as compiler generated code
+	 -if compiler cant evaluate some library function, it waits until runtime library rutine.
+-
+
+

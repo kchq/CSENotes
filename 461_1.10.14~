@@ -1,0 +1,4 @@
+>ifconfig to view your ip/ports
+127.0.0.1 is always your own local host
+
+MASK: 255.255.255.0 (11...110000)
