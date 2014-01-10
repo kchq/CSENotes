@@ -1,0 +1,44 @@
+Abstracted layers of compiler: (how gcc works):
+	   -FE (front end for langauge specifics)
+	   -ME (redundancy eliminator, etc that are shared)
+	   -RSE (specific targets, such as x86, arm, mips, etc)
+
+JVM:
+	-java style is to compile with javac to create a jar file (using JVM), hich can then be run anywhere. 
+	-The smaller the jar file, the easier it is to send a jar over the network.
+	-if problems solved in downstream phase, everyone benefits from them
+	-jruby, javac, etc that all compile things to the JVM (for jars)
+
+		-dolvik translation from JVM (jar) to push out to android phones
+		-java liscense restricted usage of JAR files, so google made the dolvik translator
+
+Finite state machines
+       deterministic: if a transition says "A" then there can only be one option, cannot be multiple transitions with same name from state 
+       finite: finite number of states. Cannot count an arbitrary number of things. Cannot verify open to closed parenthesis, 
+       	       unless number if countable
+       machine:
+
+       -states
+       -alphabet (set of symbols)
+       -transitions
+
+
+       X ----- X ----- X
+       ^   a	    b
+     Start
+
+        -Single starting edge
+	-potential for multiple ending states,
+        -cannot have mutliple transitions from the same state with the same symbol
+		- you CAN have identicaly transitions from diff states
+
+Everything we can recognize in regular expressions, we can represent with finite state machines ( and vice versa )
+
+
+Rule 0  RA:: Regural expression consists of a symb || 
+Rule 1	RB:: Regural expression consists of 2 regural expressions
+Rule 2	RC:: Regular expression == (RA | RB) 
+Rule 3  RD:: Regular expression == (RB)* (Kleene star)
+
+Epsilon Transition (free transition): NDFSM (non deterministic finite state machine)
+	this is a guess
