@@ -3,3 +3,26 @@
 
 MASK: 255.255.255.0 (11...110000)
 
+---------------------------------------------
+Project 1: Registration
+Building a protocol on top of UDP to regisiter a remote service
+
+TCP vs UDP:
+-TCP send first packet asking for if its cool to open communication
+     -opens "flow" connection at the network level
+     -overhead is associated with creating the actual connection
+
+-UDP, spit packets with arbitrary IP to arbitrary destination without a secure connection
+      -UDP unconnected, just send shit
+      -lower latency for small amounts of data
+
+----------------------------------------------
+Project 2: Tor network (anonymization network)
+-privacy of content, but lacks privacy of who you are talking to
+-addresses of who you are trying to talk to are in the header, which is required to access information online.
+-must send message to some other destination, in the case of Tor, we talk to some Tor node.
+
+Using a node network, they cannot tell which request was sent to the node when. Cannot trace back to the initial request.
+
+No single node know where your endpoint is headed. If you were trying to break the network, you would have to go from the endpoint, and work backwards
+
