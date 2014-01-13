@@ -1,0 +1,9 @@
+-regular expressions by default concatenated with an epsilon transition
+-between every state we must add an epsilon transition (why?)
+	 -this causes it to become non-deterministic
+
+-Must change from ND to deterministic:
+      -must take all possible paths with free epsilon transitions
+
+k states to 2^k states in deterministic state machine (worst case scenario)
+(exponential complexity)
